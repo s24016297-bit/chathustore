@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LankaPay Gateway | Secure Payment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="container">
+        <div class="order-summary">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-store"></i></div>
+                <div class="logo-text">E-Shop Lanka</div>
+            </div>
+            
+            <h2 class="order-title">Order Summary</h2>
+            
+            <div class="customer-info">
+                <div class="info-item">
+                    <span>Customer Name:</span>
+                    <span>Sanjaya Perera</span>
+                </div>
+                <div class="info-item">
+                    <span>Order Number:</span>
+                    <span>ESL238945</span>
+                </div>
+                <div class="info-item">
+                    <span>Order Date:</span>
+                    <span>Oct 15, 2023</span>
+                </div>
+            </div>
+            
+            <div class="order-details">
+                <div class="product">
+                    <span>Samsung Mobile</span>
+                    <span>$760.00</span>
+                </div>
+                <div class="product">
+                    <span>Mens Bond Watch</span>
+                    <span>$150.00</span>
+                </div>
+                <div class="product">
+                    <span>Wireless Earbuds</span>
+                    <span>$120.00</span>
+                </div>
+                
+                <div class="product">
+                    <span>Shipping:</span>
+                    <span>FREE</span>
+                </div>
+                
+                <div class="total">
+                    <span>Total Amount:</span>
+                    <span>$1,030.00</span>
+                </div>
+            </div>
+            
+            <div class="conversion">
+                <div class="info-item">
+                    <span>Amount in LKR:</span>
+                    <span>Rs 339,900.00</span>
+                </div>
+                <div class="info-item">
+                    <span>Exchange Rate:</span>
+                    <span>1 USD = 330 LKR</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="payment-form">
+            <div class="payment-header">
+                <h2 class="payment-title">LankaPay Secure Gateway</h2>
+                <p class="payment-subtitle">Complete your payment securely</p>
+            </div>
+            
+            <div class="payment-options">
+                <div class="payment-option active" id="cardOption">
+                    <i class="fas fa-credit-card"></i>
+                    <div>Credit/Debit Card</div>
+                </div>
+                <div class="payment-option" id="bankOption">
+                    <i class="fas fa-university"></i>
+                    <div>Internet Banking</div>
+                </div>
+                <div class="payment-option" id="mobileOption">
+                    <i class="fas fa-mobile-alt"></i>
+                    <div>Mobile Payment</div>
+                </div>
+            </div>
+            
+            <!-- Card Payment Form -->
+            <div id="cardForm">
+                <div class="form-group">
+                    <label class="form-label">Card Number</label>
+                    <input type="text" class="form-input" placeholder="Enter 16-digit card number" maxlength="19" id="cardNumber">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Expiry Date</label>
+                        <input type="text" class="form-input" placeholder="MM/YY" maxlength="5" id="expiryDate">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">CVV</label>
+                        <input type="text" class="form-input" placeholder="123" maxlength="3" id="cvv">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Cardholder Name</label>
+                    <input type="text" class="form-input" placeholder="As shown on card" id="cardName">
+                </div>
+            </div>
+            
+            <!-- Bank Payment Form -->
+            <div id="bankForm" style="display: none;">
+                <div class="form-group">
+                    <label class="form-label">Select Your Bank</label>
+                    <div class="bank-options">
+                        <div class="bank-option">
+                            <img src="https://logo.clearbit.com/combank.lk" alt="Commercial Bank">
+                            <div>Commercial</div>
+                        </div>
+                        <div class="bank-option">
+                            <img src="https://logo.clearbit.com/boc.lk" alt="Bank of Ceylon">
+                            <div>BOC</div>
+                        </div>
+                        <div class="bank-option">
+                            <img src="https://logo.clearbit.com/peoplesbank.lk" alt="People's Bank">
+                            <div>People's</div>
+                        </div>
+                        <div class="bank-option">
+                            <img src="https://logo.clearbit.com/hnb.net" alt="HNB">
+                            <div>HNB</div>
+                        </div>
+                        <div class="bank-option">
+                            <img src="https://logo.clearbit.com/nsb.lk" alt="NSB">
+                            <div>NSB</div>
+                        </div>
+                        <div class="bank-option">
+                            <img src="https://logo.clearbit.com/dfcc.lk" alt="DFCC">
+                            <div>DFCC</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Internet Banking Username</label>
+                    <input type="text" class="form-input" placeholder="Enter your username">
+                </div>
+            </div>
+            
+            <!-- Mobile Payment Form -->
+            <div id="mobileForm" style="display: none;">
+                <div class="form-group">
+                    <label class="form-label">Select Mobile Payment</label>
+                    <div class="bank-options">
+                        <div class="bank-option">
+                            <img src="https://logo.clearbit.com/mcash.lk" alt="mCash">
+                            <div>mCash</div>
+                        </div>
+                        <div class="bank-option">
+                            <img src="https://logo.clearbit.com/genie.lk" alt="Genie">
+                            <div>Genie</div>
+                        </div>
+                        <div class="bank-option">
+                            <img src="https://logo.clearbit.com/ezcash.lk" alt="eZ Cash">
+                            <div>eZ Cash</div>
+                        </div>
+                        <div class="bank-option">
+                            <img src="https://logo.clearbit.com/sampath.lk" alt="Sampath">
+                            <div>Sampath</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Mobile Number</label>
+                    <input type="text" class="form-input" placeholder="07X XXX XXXX">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">PIN</label>
+                    <input type="password" class="form-input" placeholder="Enter your PIN">
+                </div>
+            </div>
+            
+            <button class="pay-button" id="payButton">Pay Now Rs 339,900.00</button>
+            
+            <p class="secure-note">
+                <i class="fas fa-lock"></i> Your payment is secured with SSL encryption
+            </p>
+        </div>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+</html>
